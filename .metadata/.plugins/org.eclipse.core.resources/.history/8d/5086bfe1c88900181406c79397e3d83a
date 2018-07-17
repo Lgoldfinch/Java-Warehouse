@@ -12,7 +12,10 @@ public class Blackjack {
 				return 0;
 			
 			else if (a < b && b < 22)
-				return b;	
+				return b;
+			
+				
+	
 }
 		return 0;
 }
