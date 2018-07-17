@@ -1,0 +1,18 @@
+package level1;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		String welcome = "Hello louis!";
+
+		System.out.println("Hello World!");
+		System.out.println(welcome);
+		System.out.println(q2.hello("Hello"));
+		System.out.println(q2.party("dollop"));
+		System.out.println(q2.Tissue(3, 7));
+		System.out.println(q2.Tissue(3, 9));
+        System.out.println(q2.retuurn("Hello World")) ;
+        
+	}
+}
+
+

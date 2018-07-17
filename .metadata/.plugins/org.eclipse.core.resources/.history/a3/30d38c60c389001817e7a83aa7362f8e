@@ -1,0 +1,10 @@
+package level2;
+
+public class Blackjack {
+
+	public void numbers(int a, int b) {
+		if (a == b && a < 22) {
+			return a; }
+	}
+	
+}

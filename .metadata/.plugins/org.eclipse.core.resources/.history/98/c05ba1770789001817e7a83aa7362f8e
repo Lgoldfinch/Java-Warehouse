@@ -1,0 +1,14 @@
+package level1;
+
+public class q2 {
+  public static String hello(String hHello) {
+	return hHello;
+	  
+  }
+	  public static String party(String cake) {
+		  return cake;
+  }
+	  public static int tissue(int red, int blue) {
+		  return red + blue;
+	  }
+}
