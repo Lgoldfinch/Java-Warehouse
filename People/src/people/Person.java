@@ -27,6 +27,8 @@ public Person(String name, int age, String jobTitle) {
 public String fullDetails() {
 String fd =  (this.name + " " + Integer.toString(this.age) + " " + this.jobTitle);
 			return fd; 
-	
+			
 }
+
+
 }
