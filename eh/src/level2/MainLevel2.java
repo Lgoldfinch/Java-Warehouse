@@ -14,6 +14,8 @@ System.out.println(us.uniqueSum(5,4,3));
 
 TooHot th = new TooHot();
 
+System.out.println(th.TooHawt(80,true));
+
 
 	}
 
