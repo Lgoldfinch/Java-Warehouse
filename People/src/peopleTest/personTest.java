@@ -31,6 +31,6 @@ public class personTest {
 	@Test 
 	public void testCompilationOfDetails() {
 		Person p = new Person("Jim", 4, "Doctor");
-		assertEquals("Name is compiled in the wrong order", p.fullDetails(), "Jim 4 Doctor");
+		assertEquals("Name is compiled in the wrong order", p.toString(), "Jim 4 Doctor");
 	}
 }

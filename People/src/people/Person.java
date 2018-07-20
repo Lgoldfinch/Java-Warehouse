@@ -1,12 +1,13 @@
 package people;
 
+import java.util.ArrayList;
+
 public class Person {
 
 	/////////////////////////Attributes///////////////////////////////////////////////
 	private String name;
 	private int age; 
 	private String jobTitle; 
-
 	////////////////////////Constructors//////////////////////////////////////////////
 public Person(String name, int age, String jobTitle) {
 		this.name = name; 
@@ -24,11 +25,12 @@ public Person(String name, int age, String jobTitle) {
 		return this.jobTitle; 
 	}
 
-public String fullDetails() {
-String fd =  (this.name + " " + Integer.toString(this.age) + " " + this.jobTitle);
-			return fd; 
-			
+public String toString() {
+		String fd =  (this.name + " " + Integer.toString(this.age) + " " + this.jobTitle);
+		return fd; 
+
+	}
 }
 
 
-}
+
