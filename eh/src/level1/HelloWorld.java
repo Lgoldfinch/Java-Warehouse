@@ -5,8 +5,11 @@ public class HelloWorld {
 
 		q2 q21 = new q2(); // created an instance of that class. Prevents having to use static.
 		String welcome = "Hello louis!";
-
+try { 
+}
+catch (IOException io) {
 		System.out.println("Hello World!");
+}
 		System.out.println(welcome);
 		System.out.println(q21.hello("Hello"));
 		System.out.println(q21.party("dollop"));

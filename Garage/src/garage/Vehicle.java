@@ -1,6 +1,6 @@
 package garage;
 
-public abstract class Vehicle { // Am I making this abstract.
+public abstract class Vehicle extends Garage { // Am I making this abstract.
 	protected boolean engine;
 	private int numberOfWheels; 
 	private String name;
@@ -51,11 +51,10 @@ public abstract class Vehicle { // Am I making this abstract.
 	public void setSpeed(int speed) {
 		this.speed = speed; 
 	}
-	public abstract int Speed(); 
 	
-	public int createVehicleID(int ID, ) {
-		
-	}
+//	public int createVehicleID(int ID, ) {
+//		
+//	}
 	
 	
 }
