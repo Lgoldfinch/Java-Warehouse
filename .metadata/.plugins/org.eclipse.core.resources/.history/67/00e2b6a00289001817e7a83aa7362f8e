@@ -1,8 +1,0 @@
-package level1;
-
-public class q2 {
-  public static String hello(String hHello) {
-	return hHello;
-	  
-  }
-}
