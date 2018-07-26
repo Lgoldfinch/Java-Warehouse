@@ -3,18 +3,17 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-/// This query pulls something out of the Sakila database
-public class JDBCExample {
+
+public class JDBCcreate {
 
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost/sakila";
 	
 	static final String USER = "root";
 		static final String Pass = "123456";
-
-		public static void main(String[] args) {
 		
-			
+	public static void main(String[] args) {
+    
 		try( Connection conn = DriverManager.getConnection(DB_URL,USER,Pass);
 				Statement stmt = conn.createStatement();) {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -38,3 +37,7 @@ public class JDBCExample {
 		}	
 	}
 
+
+	}
+
+}
