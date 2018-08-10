@@ -48,7 +48,7 @@ public abstract class User {
 		}
  // is this needed.
 		
-		return (Boolean) null;
+		return false;
 	}
 
 	public String adminToGuestConversion(boolean paid, String email) {
@@ -74,7 +74,7 @@ public abstract class User {
 		catch(Exception e) { 
 			e.printStackTrace();
 		}
-		return "";
+		return "__";
 	}
 	public boolean isPaid() {
 		return paid;

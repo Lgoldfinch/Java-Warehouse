@@ -15,7 +15,7 @@ public class CommentTest {
 	
 	@Test
 public void testLeaveComment () { 
-	assertTrue("No comment left", c.leaveComment(2, "Got to get down on friday."));	
+	assertEquals("No comment left", c.leaveComment(1,"wow"), "__");	
 	}
     
 }

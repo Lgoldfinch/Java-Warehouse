@@ -14,14 +14,11 @@ public class GuestUser extends User {
 	
 	private String email;
 	private boolean paid;
-	private int userID, accountID;
+	private int userID; 
+	private int accountID = 1;
 
 	public GuestUser(String email, int userID) {
 		super(email, userID);
-	}
-
-	public int getAccountID() {
-		return accountID;
 	}
 
 	public String adminToGuestConversion() {
