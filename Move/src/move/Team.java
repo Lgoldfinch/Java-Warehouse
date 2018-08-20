@@ -155,16 +155,7 @@ public class Team {
 		return false;
 	}
 
-	public String addPlayer(int teamID, int userID, User AdminUser) { 
-		try( Connection conn = DriverManager.getConnection(DB_URL,USER,PASS); 
-				Statement stmt = conn.createStatement();) {
-			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			System.out.println("Connecting to database...");
-			System.out.println("Creating statement...");
 
-			if (team_id) !!!!!!!!!!!!!
-			String sql = "UPDATE User SET team_id = '"+teamID+"' WHERE user_ID = '"+userID+"'";
-			stmt.executeUpdate(sql);
 
 			//		String sql; 
 			//		sql = "SELECT Account_id FROM User Where email ='"+email+"'"; // I created a field for this, not sure if this will work.
@@ -182,16 +173,7 @@ public class Team {
 			//			}
 			//		}
 			//		rs.close();
-		}
-		catch(SQLException se) {
-			se.printStackTrace();
-		}
-		catch(Exception e) { 
-			e.printStackTrace();
-		}
-		return "; 
-	}
-
+	
 	public int getTeamID() {
 		return teamID;
 	}

@@ -1,21 +1,23 @@
 package moveTest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import move.AdminUser;
+import move.GuestUser;
 import move.Team;
 
 public class TeamTest {
-
-	Team t = new Team();
+    AdminUser au = new AdminUser("longjohn@gmail.com", 0);
+    GuestUser gu = new GuestUser("longjohn@gmail.com", 0);
+	Team t = new Team(au, gu, 1);
 	@Test
 	public void testGetTeamID() {
-		assertEquals("Team ID not found",t.getTeamID(),"Team???");
+		assertEquals("Team ID not found",t.getTeamID(),"Team");
 	}
 	@Test
-	public void testSetTeamID() { //Dont know if you need a setter for this.
-		t.getTeamID();
-		assertEquals("?",t.setTeamID(2),2);
+	public void testCreateTeam() {
+		assertTrue(t.createTeam("The boys", au));
 	}
-}
+	}

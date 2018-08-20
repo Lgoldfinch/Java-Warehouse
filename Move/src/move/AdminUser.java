@@ -29,4 +29,3 @@ public class AdminUser extends User {
 		return guestToAdminConversion(isPaid(), email);
 	}
 	}
-

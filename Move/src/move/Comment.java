@@ -136,4 +136,3 @@ public class Comment{
 //	accountID = rs2.getInt("account_id");
 //	rs2.close(); // Deleted accountID from the table.
 }
-
