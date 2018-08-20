@@ -16,9 +16,10 @@ public class AdminUser extends User {
 	private int userID;
 	private String email;
 	private int accountID = 2;
+	
 
-	public AdminUser(String email, int accountID) {
-		super(email, accountID);
+	public AdminUser(String email, int userID, int accountID) {
+		super(email, userID, accountID);
 	}
 
 	public String adminToGuestConversion() {
@@ -27,11 +28,5 @@ public class AdminUser extends User {
 	public boolean guestToAdminConversion() {
 		return guestToAdminConversion(isPaid(), email);
 	}
-	public String getEmail() {
-		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-}
 

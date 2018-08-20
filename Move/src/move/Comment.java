@@ -30,24 +30,16 @@ public class Comment{
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 			System.out.println("Connecting to database...");
 			System.out.println("Creating statement...");
-			String sql = "SELECT comment_id FROM comment ORDER BY User_id DESC LIMIT 1";
+			String sql = "SELECT comment_id FROM comment ORDER BY comment_id DESC LIMIT 1";
 			ResultSet rs = stmt.executeQuery(sql); 
 			while(rs.next()) {
 				int commentID = rs.getInt("comment_id");
-				this.commentID = commentID + 1;
+				commentID = commentID + 1;
+				String sql2 = "INSERT INTO Comment VALUES ('"+commentID+"','"+userID+"', '"+comment+"')";  // Add in CommentID, remember that timestamp was meant to be in the SQL table.
+				stmt.executeUpdate(sql2);
+				System.out.println("User successfully left a comment.");
 			}
 			rs.close(); 
-			String sql2 = "SELECT account_id FROM comment WHERE account_id = '"+userID+"'";
-			ResultSet rs2 = stmt.executeQuery(sql2);
-			if (rs2.next()) {
-				rs2.first(); 
-			}
-			accountID = rs2.getInt("account_id");
-			rs2.close(); 
-			String sql3 = "INSERT INTO Comment VALUES ('"+commentID+"','"+userID+"', '"+comment+"', '"+accountID+"')";  // Add in CommentID, remember that timestamp was meant to be in the SQL table.
-			stmt.executeUpdate(sql3);
-			System.out.println("User successfully left a comment.");
-
 		}
 		catch(SQLException se) {
 			se.printStackTrace();
@@ -58,14 +50,14 @@ public class Comment{
 		return "__";
 	}
 
-	public String deleteOwnComment(int UserID, int commentID) {
+	public String deleteOwnComment(int userID, int commentID) {
 
 		try(Connection conn = DriverManager.getConnection(DB_URL,USER,Pass);
 				Statement stmt = conn.createStatement();) {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 			System.out.println("Connecting to database...");
 			System.out.println("Creating statement...");
-			String sql = "DELETE FROM Comment WHERE USER_ID = '"+UserID+"' && Comment_ID = '"+commentID+"'";
+			String sql = "DELETE FROM Comment WHERE USER_ID = '"+userID+"' && Comment_ID = '"+commentID+"'";
 			stmt.executeUpdate(sql);
 			System.out.println("Comment deleted.");
 		}
@@ -78,7 +70,7 @@ public class Comment{
 		
 		return "__"; 
 	}
-	public boolean adminDeleteComment(int userID, int commentID, User AdminUser) {
+	public String adminDeleteComment(int userID, int commentID, User AdminUser) {
 		
 		try( Connection conn = DriverManager.getConnection(DB_URL,USER,Pass);
 				Statement stmt = conn.createStatement();) {
@@ -113,7 +105,7 @@ public class Comment{
 		catch(Exception e) { 
 			e.printStackTrace();	
 		}
-		return false;
+		return "__";
 	}
 	
 	public String editComment(int userID, int commentID, String updatedComment) {
@@ -135,5 +127,13 @@ public class Comment{
 		}
 		return "__";
 	}
+	
+//	String sql2 = "SELECT account_id FROM comment WHERE account_id = '"+userID+"'";
+//	ResultSet rs2 = stmt.executeQuery(sql2);
+//	if (rs2.next()) {
+//		rs2.first(); 
+//	}
+//	accountID = rs2.getInt("account_id");
+//	rs2.close(); // Deleted accountID from the table.
 }
 

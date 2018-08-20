@@ -17,14 +17,15 @@ public class GuestUser extends User {
 	private int userID; 
 	private int accountID = 1;
 
-	public GuestUser(String email, int userID) {
-		super(email, userID);
+	public GuestUser(String email, int userID, int accountID) { // Do I need to do - this.email...etc when Ive already made a constructor.
+		super(email, userID, accountID);
+	
 	}
 
 	public String adminToGuestConversion() {
 		return adminToGuestConversion(isPaid(), email);
 
-	}
+	} 
 	public boolean guestToAdminConversion() {
 		return guestToAdminConversion(isPaid(), email);
 	}
@@ -32,7 +33,7 @@ public class GuestUser extends User {
 	public void setAccountID(int accountID) {
 		this.accountID = accountID;
 	}
-	public String getEmail() {
+	public String getEmail() { 
 		return email;
 	}
 	public void setEmail(String email) {

@@ -17,9 +17,10 @@ public abstract class User {
 	private String email;
 	private boolean paid;
 
-	public User(String email, int userID) {
+	public User(String email, int userID, int accountID) {
 		this.email = email;
 		this.userID = userID;
+		this.accountID = accountID;
 	}
 
 	public boolean guestToAdminConversion(boolean paid, String email) {
@@ -47,7 +48,6 @@ public abstract class User {
 			e.printStackTrace();
 		}
  // is this needed.
-		
 		return false;
 	}
 
@@ -82,4 +82,16 @@ public abstract class User {
 	public void setPaid(boolean paid) {
 		this.paid = paid;
 		}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getUserId() {
+		return userID;
+	}
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
 }

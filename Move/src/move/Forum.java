@@ -28,7 +28,7 @@ public void initialiseForum() {
 }
 
 
-public void createNewThread(String threadName) {
+public void createNewThread(String threadName, ) {
 
 }
 }

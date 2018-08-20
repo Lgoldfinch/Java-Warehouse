@@ -18,6 +18,12 @@ public class Main {
 	
 /////////////////////////////// Comments /////////////////////////
 	    Comment c = new Comment(5,"wowaweewa2");
-	    System.out.println(c.leaveComment(1,"wow"));
+	 //   AdminUser au = new AdminUser;
+	  //  System.out.println(c.leaveComment(1,"wow2"));
+	    User AdminUser = new AdminUser("johnboy@gmail.com",5, 1);
+	    System.out.println(c.editComment(1, 4, "wow3"));
+	//	System.out.println(c.adminDeleteComment(1, 4, AdminUser));
+	   // System.out.println(c.adminDeleteComment(5,4, au));
 	}
 }
+ 
